@@ -40,7 +40,8 @@ final as (
         cast(sales_item_item_id as {{ dbt_utils.type_int() }}) as sales_item_item_id,
         sales_item_quantity,
         sales_item_unit_price,
-        sales_item_tax_code_id
+        sales_item_tax_code_id,
+        sales_item_class_id
     from fields
 )
 
