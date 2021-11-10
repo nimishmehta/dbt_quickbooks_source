@@ -1,0 +1,12 @@
+bookrqb:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost #data-test.cdcgnwsfkwtg.us-west-1.rds.amazonaws.com
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: databridge
+      schema: qb_3rdstrt
+      threads: 32

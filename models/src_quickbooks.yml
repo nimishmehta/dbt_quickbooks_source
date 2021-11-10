@@ -979,3 +979,25 @@ sources:
             description: Website url associated with the vendor.
           - name: vendor_1099
             description: Boolean indicating whether this vendor is an independent contractor; someone who is given a 1099-MISC form at the end of the year.
+
+      - name: class
+        description: Table containing class information, majorly used for classification of transactional records.
+        columns:
+          - name: id
+            description: Unique identifier of the department.
+          - name: sub_class
+            description: Boolean indicating whether the class is sub class.
+          - name: sync_token
+            description: Token indicating status of sync.
+          - name: fully_qualified_name
+            description: Fully qualified name containing class and sub class.
+          - name: name
+            description: Name of the class.
+          - name: active
+            description: Boolean indicating whether the class is active.
+          - name: parent_class_id
+            description: Reference to the unique identifier of the parent class if sub_class = true.
+          - name: created_at
+            description: Timestamp of the date which the class was created.
+          - name: updated_at
+            description: Timestamp of the date which the class was last updated.
