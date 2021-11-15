@@ -8,7 +8,7 @@ require-dbt-version: ">=0.20.0"
 
 models:
   quickbooks_source:
-    +schema: staging
+    +schema: bookr_staging
     materialized: table
     tmp:
       materialized: view
