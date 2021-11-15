@@ -40,9 +40,10 @@ final as (
         currency_id,
         description,
         fully_qualified_name,
-        updated_at
+        updated_at,
+        new_tax
 
-    from base
+    from account
 )
 
 select *
