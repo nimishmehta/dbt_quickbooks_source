@@ -40,8 +40,7 @@ final as (
         currency_id,
         description,
         fully_qualified_name,
-        updated_at,
-        new_tax
+        updated_at
 
     from account
 )
