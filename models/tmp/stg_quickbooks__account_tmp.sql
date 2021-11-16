@@ -1,2 +1,2 @@
 select *
-from {{ var('account') }}
+from {{ var('accounts') }}

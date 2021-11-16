@@ -11,16 +11,12 @@ models:
     +schema: staging
     materialized: table
     tmp:
-      materialized: table
+      materialized: view
 
 vars:
   quickbooks_database: airbytes
   quickbooks_schema: qb_3rdst
   quickbooks_source:
-    account:  "{{ source('quickbooks','account') }}"
-    account_currencyref:  "{{ source('quickbooks','account_currencyref') }}"
-    account_metadata: "{{ source('quickbooks','account_metadata') }}"
-    account_parentref:  "{{ source('quickbooks','account_parentref') }}"
     accounts: "{{ source('quickbooks','accounts') }}"
     accounts_currencyref: "{{ source('quickbooks','accounts_currencyref') }}"
     accounts_metadata:  "{{ source('quickbooks','accounts_metadata') }}"
@@ -163,11 +159,11 @@ vars:
     items_metadata: "{{ source('quickbooks','items_metadata') }}"
     journal_entries:  "{{ source('quickbooks','journal_entries') }}"
     journal_entries_currencyref:  "{{ source('quickbooks','journal_entries_currencyref') }}"
+    journal_entries_taxrateref: "{{ source('quickbooks','journal_entries_taxrateref') }}"
     journal_entries_line: "{{ source('quickbooks','journal_entries_line') }}"
     journal_entries_line__linedetail_accountref:  "{{ source('quickbooks','journal_entries_line__linedetail_accountref') }}"
     journal_entries_line_journalentrylinedetail:  "{{ source('quickbooks','journal_entries_line_journalentrylinedetail') }}"
     journal_entries_metadata: "{{ source('quickbooks','journal_entries_metadata') }}"
-    journal_entries_taxrateref: "{{ source('quickbooks','journal_entries_taxrateref') }}"
     payment_methods:  "{{ source('quickbooks','payment_methods') }}"
     payment_methods_metadata: "{{ source('quickbooks','payment_methods_metadata') }}"
     payments: "{{ source('quickbooks','payments') }}"

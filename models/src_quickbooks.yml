@@ -11,74 +11,6 @@ sources:
       error_after: {count: 72, period: hour}
 
     tables:
-      - name: account
-        columns:
-          - name: Id
-          - name: Name
-          - name: active
-          - name: domain
-          - name: metadata
-          - name: parentref
-          - name: synctoken
-          - name: subaccount
-          - name: accounttype
-          - name: currencyref
-          - name: accountsubtype
-          - name: classification
-          - name: currentbalance
-          - name: account_number
-          - name: fullyqualifiedname
-          - name: currentbalancewithsubaccounts
-          - name: _airbyte_emitted_at
-          - name: _airbyte_account_hashid
-
-      - name: account_currencyref
-        columns:
-          - name: _airbyte_account_hashid
-          - name: name
-          - name: value
-          - name: _airbyte_emitted_at
-          - name: _airbyte_currencyref_hashid
-
-      - name: account_metadata
-        columns:
-          - name: _airbyte_account_hashid
-          - name: createtime
-          - name: lastupdatedtime
-          - name: _airbyte_emitted_at
-          - name: _airbyte_metadata_hashid
-
-      - name: account_parentref
-        columns:
-          - name: _airbyte_account_hashid
-          - name: value
-          - name: _airbyte_emitted_at
-          - name: _airbyte_parentref_hashid
-
-      - name: account_scd
-        columns:
-          - name: Id
-          - name: Name
-          - name: active
-          - name: domain
-          - name: metadata
-          - name: parentref
-          - name: synctoken
-          - name: subaccount
-          - name: accounttype
-          - name: currencyref
-          - name: accountsubtype
-          - name: classification
-          - name: currentbalance
-          - name: account_number
-          - name: fullyqualifiedname
-          - name: currentbalancewithsubaccounts
-          - name: _airbyte_start_at
-          - name: _airbyte_end_at
-          - name: _airbyte_active_row
-          - name: _airbyte_emitted_at
-          - name: _airbyte_account_hashid
-
       - name: accounts
         columns:
           - name: Id
@@ -1754,6 +1686,10 @@ sources:
           - name: fullyqualifiedname
           - name: _airbyte_emitted_at
           - name: _airbyte_items_hashid
+          # Additional fields via refs
+          - name: asset_account_id
+          - name: expense_account_id
+          - name: income_account_id
 
       - name: items_assetaccountref
         columns:
@@ -1831,6 +1767,8 @@ sources:
           - name: exchangerate
           - name: _airbyte_emitted_at
           - name: _airbyte_journal_entries_hashid
+          # Additional ref field
+          - name: currency_id
 
       - name: journal_entries_currencyref
         columns:
