@@ -8,7 +8,7 @@
     {"name": "description", "datatype": dbt_utils.type_string()},
     {"name": "expense_account_id", "datatype": dbt_utils.type_int()},
     {"name": "fully_qualified_name", "datatype": dbt_utils.type_string()},
-    {"name": "id", "datatype": dbt_utils.type_int()},
+    {"name": "Id", "alias": "id", "datatype": dbt_utils.type_int()},
     {"name": "income_account_id", "datatype": dbt_utils.type_int()},
     {"name": "inventory_start_date", "datatype": "date"},
     {"name": "level", "datatype": dbt_utils.type_int()},
