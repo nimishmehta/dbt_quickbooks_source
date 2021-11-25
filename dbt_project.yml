@@ -2,7 +2,7 @@ config-version: 2
 
 name: 'quickbooks_source'
 version: '0.3.0'
-profile: 'bookrabqb'
+profile: 'qb_3rdst'
 
 require-dbt-version: ">=0.20.0"
 
@@ -14,7 +14,7 @@ models:
       materialized: view
 
 vars:
-  quickbooks_database: airbytes
+  quickbooks_database: airbyte
   quickbooks_schema: qb_3rdst
   quickbooks_source:
     accounts: "{{ source('quickbooks','accounts') }}"
@@ -135,6 +135,7 @@ vars:
     invoices_customerref: "{{ source('quickbooks','invoices_customerref') }}"
     invoices_customfield: "{{ source('quickbooks','invoices_customfield') }}"
     invoices_deliveryinfo:  "{{ source('quickbooks','invoices_deliveryinfo') }}"
+    invoices_departmentref:  "{{ source('quickbooks','invoices_departmentref') }}"
     invoices_line:  "{{ source('quickbooks','invoices_line') }}"
     invoices_line_discou__il_discountaccountref:  "{{ source('quickbooks','invoices_line_discou__il_discountaccountref') }}"
     invoices_line_discountlinedetail: "{{ source('quickbooks','invoices_line_discountlinedetail') }}"
@@ -297,13 +298,13 @@ vars:
     #Variables if your company utilizes the below parent and child transactional tables.
     using_address:        True
     using_bill:           True
-    using_credit_memo:    False
+    using_credit_memo:    True
     using_department:     True
     using_class:          True
     using_deposit:        True
-    using_estimate:       False
+    using_estimate:       True
     using_invoice:        True
-    using_invoice_bundle: False
+    using_invoice_bundle: True
     using_journal_entry:  True
     using_payment:        True
     using_refund_receipt: True

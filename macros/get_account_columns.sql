@@ -1,7 +1,6 @@
 {% macro get_account_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "alias": "_fivetran_synced", "quote": "true", "datatype": dbt_utils.type_timestamp()},
     {"name": "acctnum", "alias": "account_number", "quote": "true", "datatype": dbt_utils.type_string()},
     {"name": "accountsubtype", "alias": "account_sub_type", "quote": "true", "datatype": dbt_utils.type_string()},
     {"name": "accounttype", "alias": "account_type", "quote": "true", "datatype": dbt_utils.type_string()},

@@ -1423,6 +1423,14 @@ sources:
           - name: _airbyte_emitted_at
           - name: _airbyte_billaddr_hashid
 
+      - name: invoices_departmentref
+        columns:
+          - name: _airbyte_invoices_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_emitted_at
+          - name: _airbyte_departmentref_hashid
+
       - name: invoices_billemail
         columns:
           - name: _airbyte_invoices_hashid

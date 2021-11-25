@@ -1,7 +1,6 @@
 {% macro get_item_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced","alias": "_fivetran_synced","quote": "true", "datatype": dbt_utils.type_timestamp()},
     {"name": "active","alias": "active","quote": "true", "datatype": "boolean"},
     {"name": "asset_account_id","alias": "asset_account_id","quote": "true", "datatype": dbt_utils.type_int()},
     {"name": "created_at","alias": "created_at","quote": "true", "datatype": dbt_utils.type_timestamp()},

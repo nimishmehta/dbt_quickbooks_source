@@ -1,10 +1,9 @@
 {% macro get_bill_linked_txn_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
-    {"name": "bill_id", "datatype": dbt_utils.type_int()},
-    {"name": "bill_payment_id", "datatype": dbt_utils.type_int()},
-    {"name": "index", "datatype": dbt_utils.type_int()}
+    {"name": "bill_id", "alias": "bill_id", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "bill_payment_id", "alias": "bill_payment_id", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "index", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()}
 ] %}
 
 {{ return(columns) }}
