@@ -13,6 +13,7 @@ sources:
     tables:
       - name: accounts
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -29,7 +30,9 @@ sources:
           - name: currentbalance
           - name: fullyqualifiedname
           - name: currentbalancewithsubaccounts
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accounts_hashid
 
       - name: accounts_currencyref
@@ -37,7 +40,9 @@ sources:
           - name: _airbyte_accounts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: accounts_metadata
@@ -45,18 +50,24 @@ sources:
           - name: _airbyte_accounts_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: accounts_parentref
         columns:
           - name: _airbyte_accounts_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_parentref_hashid
 
       - name: accounts_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -76,11 +87,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accounts_hashid
 
       - name: bill_payments
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -97,7 +111,9 @@ sources:
           - name: exchangerate
           - name: departmentref
           - name: creditcardpayment
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_bill_payments_hashid
 
       - name: bill_payments_apaccountref
@@ -105,7 +121,9 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_apaccountref_hashid
 
       - name: bill_payments_checkpayment
@@ -113,7 +131,9 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: printstatus
           - name: bankaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_checkpayment_hashid
 
       - name: bill_payments_checkpayment_bankaccountref
@@ -121,7 +141,9 @@ sources:
           - name: _airbyte_checkpayment_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_bankaccountref_hashid
 
       - name: bill_payments_credit__dpayment_ccaccountref
@@ -129,14 +151,18 @@ sources:
           - name: _airbyte_creditcardpayment_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_ccaccountref_hashid
 
       - name: bill_payments_creditcardpayment
         columns:
           - name: _airbyte_bill_payments_hashid
           - name: ccaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_creditcardpayment_hashid
 
       - name: bill_payments_currencyref
@@ -144,7 +170,9 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: bill_payments_departmentref
@@ -152,7 +180,9 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: bill_payments_line
@@ -160,7 +190,9 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: amount
           - name: linkedtxn
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: bill_payments_line_linkedtxn
@@ -168,7 +200,9 @@ sources:
           - name: _airbyte_line_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: bill_payments_metadata
@@ -176,11 +210,15 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: bill_payments_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -200,7 +238,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_bill_payments_hashid
 
       - name: bill_payments_vendorref
@@ -208,11 +248,14 @@ sources:
           - name: _airbyte_bill_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendorref_hashid
 
       - name: bills
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -231,7 +274,9 @@ sources:
           - name: exchangerate
           - name: salestermref
           - name: departmentref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_bills_hashid
 
       - name: bills_apaccountref
@@ -239,7 +284,9 @@ sources:
           - name: _airbyte_bills_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_apaccountref_hashid
 
       - name: bills_currencyref
@@ -247,7 +294,9 @@ sources:
           - name: _airbyte_bills_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: bills_departmentref
@@ -255,7 +304,9 @@ sources:
           - name: _airbyte_bills_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: bills_line
@@ -268,7 +319,9 @@ sources:
           - name: description
           - name: itembasedexpenselinedetail
           - name: accountbasedexpenselinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: bills_line_accountba__inedetail_customerref
@@ -276,7 +329,9 @@ sources:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: bills_line_accountba__linedetail_accountref
@@ -284,31 +339,62 @@ sources:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
       - name: bills_line_accountba__linedetail_taxcoderef
         columns:
           - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
+
+      - name: bills_line_accountba__selinedetail_classref
+        columns:
+          - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: bills_line_accountbasedexpenselinedetail
         columns:
           - name: _airbyte_line_hashid
+          - name: classref
           - name: accountref
           - name: taxcoderef
           - name: customerref
           - name: billablestatus
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountbase__enselinedetail_hashid
+
+      - name: bills_line_itembased__inedetail_customerref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_customerref_hashid
 
       - name: bills_line_itembased__linedetail_taxcoderef
         columns:
           - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: bills_line_itembased__nselinedetail_itemref
@@ -316,18 +402,34 @@ sources:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
+
+      - name: bills_line_itembased__selinedetail_classref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: bills_line_itembasedexpenselinedetail
         columns:
           - name: _airbyte_line_hashid
           - name: qty
           - name: itemref
+          - name: classref
           - name: unitprice
           - name: taxcoderef
+          - name: customerref
           - name: billablestatus
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itembasedexpenselinedetail_hashid
 
       - name: bills_linkedtxn
@@ -335,7 +437,9 @@ sources:
           - name: _airbyte_bills_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: bills_metadata
@@ -343,18 +447,25 @@ sources:
           - name: _airbyte_bills_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: bills_salestermref
         columns:
           - name: _airbyte_bills_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestermref_hashid
 
       - name: bills_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -376,7 +487,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_bills_hashid
 
       - name: bills_vendorref
@@ -384,11 +497,14 @@ sources:
           - name: _airbyte_bills_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendorref_hashid
 
       - name: budgets
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -400,7 +516,9 @@ sources:
           - name: budgettype
           - name: budgetdetail
           - name: budgetentrytype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_budgets_hashid
 
       - name: budgets_budgetdetail
@@ -412,7 +530,9 @@ sources:
           - name: budgetdate
           - name: customerref
           - name: departmentref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_budgetdetail_hashid
 
       - name: budgets_budgetdetail_accountref
@@ -420,7 +540,9 @@ sources:
           - name: _airbyte_budgetdetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
       - name: budgets_budgetdetail_classref
@@ -428,7 +550,9 @@ sources:
           - name: _airbyte_budgetdetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: budgets_budgetdetail_customerref
@@ -436,7 +560,9 @@ sources:
           - name: _airbyte_budgetdetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: budgets_budgetdetail_departmentref
@@ -444,7 +570,9 @@ sources:
           - name: _airbyte_budgetdetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: budgets_metadata
@@ -452,11 +580,15 @@ sources:
           - name: _airbyte_budgets_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: budgets_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -471,11 +603,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_budgets_hashid
 
       - name: classes
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -485,7 +620,9 @@ sources:
           - name: parentref
           - name: synctoken
           - name: fullyqualifiedname
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classes_hashid
 
       - name: classes_metadata
@@ -493,7 +630,9 @@ sources:
           - name: _airbyte_classes_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: classes_parentref
@@ -501,11 +640,15 @@ sources:
           - name: _airbyte_classes_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_parentref_hashid
 
       - name: classes_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -518,11 +661,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classes_hashid
 
       - name: credit_memos
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -546,10 +692,14 @@ sources:
           - name: hometotalamt
           - name: salestermref
           - name: txntaxdetail
+          - name: departmentref
           - name: remainingcredit
           - name: patternproperties
           - name: applytaxafterdiscount
+          - name: globaltaxcalculationenum
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_credit_memos_hashid
 
       - name: credit_memos_billaddr
@@ -562,14 +712,18 @@ sources:
           - name: line2
           - name: line3
           - name: line4
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: credit_memos_billemail
         columns:
           - name: _airbyte_credit_memos_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billemail_hashid
 
       - name: credit_memos_classref
@@ -577,7 +731,9 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: credit_memos_currencyref
@@ -585,14 +741,18 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: credit_memos_customermemo
         columns:
           - name: _airbyte_credit_memos_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customermemo_hashid
 
       - name: credit_memos_customerref
@@ -600,7 +760,9 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: credit_memos_customfield
@@ -608,9 +770,22 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: Name
           - name: Type
+          - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
+
+      - name: credit_memos_departmentref
+        columns:
+          - name: _airbyte_credit_memos_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: credit_memos_line
         columns:
@@ -620,15 +795,82 @@ sources:
           - name: linenum
           - name: detailtype
           - name: description
+          - name: discountlinedetail
           - name: salesitemlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
+
+      - name: credit_memos_line_di__il_discountaccountref
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_discountaccountref_hashid
+
+      - name: credit_memos_line_di__linedetail_taxcoderef
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
+
+      - name: credit_memos_line_di__ntlinedetail_classref
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: credit_memos_line_discountlinedetail
+        columns:
+          - name: _airbyte_line_hashid
+          - name: classref
+          - name: taxcoderef
+          - name: discountaccountref
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_discountlinedetail_hashid
+
+      - name: credit_memos_line_sa__detail_itemaccountref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itemaccountref_hashid
+
+      - name: credit_memos_line_sa__emlinedetail_classref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: credit_memos_line_sa__linedetail_taxcoderef
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: credit_memos_line_sa__temlinedetail_itemref
@@ -636,7 +878,9 @@ sources:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: credit_memos_line_salesitemlinedetail
@@ -644,9 +888,13 @@ sources:
           - name: _airbyte_line_hashid
           - name: qty
           - name: itemref
+          - name: classref
           - name: unitprice
           - name: taxcoderef
+          - name: itemaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salesitemlinedetail_hashid
 
       - name: credit_memos_metadata
@@ -654,7 +902,9 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: credit_memos_salestermref
@@ -662,11 +912,15 @@ sources:
           - name: _airbyte_credit_memos_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestermref_hashid
 
       - name: credit_memos_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -690,13 +944,17 @@ sources:
           - name: hometotalamt
           - name: salestermref
           - name: txntaxdetail
+          - name: departmentref
           - name: remainingcredit
           - name: patternproperties
           - name: applytaxafterdiscount
+          - name: globaltaxcalculationenum
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_credit_memos_hashid
 
       - name: credit_memos_shipaddr
@@ -709,18 +967,23 @@ sources:
           - name: line1
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: credit_memos_txntaxdetail
         columns:
           - name: _airbyte_credit_memos_hashid
           - name: totaltax
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxdetail_hashid
 
       - name: customers
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: fax
           - name: job
@@ -743,6 +1006,7 @@ sources:
           - name: companyname
           - name: currencyref
           - name: displayname
+          - name: araccountref
           - name: primaryphone
           - name: salestermref
           - name: billwithparent
@@ -753,8 +1017,20 @@ sources:
           - name: defaulttaxcoderef
           - name: fullyqualifiedname
           - name: preferreddeliverymethod
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customers_hashid
+
+      - name: customers_araccountref
+        columns:
+          - name: _airbyte_customers_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_araccountref_hashid
 
       - name: customers_billaddr
         columns:
@@ -767,7 +1043,9 @@ sources:
           - name: country
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: customers_currencyref
@@ -775,7 +1053,9 @@ sources:
           - name: _airbyte_customers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: customers_defaulttaxcoderef
@@ -783,14 +1063,18 @@ sources:
           - name: _airbyte_customers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_defaulttaxcoderef_hashid
 
       - name: customers_fax
         columns:
           - name: _airbyte_customers_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_fax_hashid
 
       - name: customers_metadata
@@ -798,21 +1082,27 @@ sources:
           - name: _airbyte_customers_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: customers_mobile
         columns:
           - name: _airbyte_customers_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_mobile_hashid
 
       - name: customers_parentref
         columns:
           - name: _airbyte_customers_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_parentref_hashid
 
       - name: customers_paymentmethodref
@@ -820,21 +1110,27 @@ sources:
           - name: _airbyte_customers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_paymentmethodref_hashid
 
       - name: customers_primaryemailaddr
         columns:
           - name: _airbyte_customers_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_primaryemailaddr_hashid
 
       - name: customers_primaryphone
         columns:
           - name: _airbyte_customers_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_primaryphone_hashid
 
       - name: customers_salestermref
@@ -842,11 +1138,15 @@ sources:
           - name: _airbyte_customers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestermref_hashid
 
       - name: customers_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: fax
           - name: job
@@ -869,6 +1169,7 @@ sources:
           - name: companyname
           - name: currencyref
           - name: displayname
+          - name: araccountref
           - name: primaryphone
           - name: salestermref
           - name: billwithparent
@@ -882,7 +1183,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customers_hashid
 
       - name: customers_shipaddr
@@ -896,18 +1199,23 @@ sources:
           - name: country
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: customers_webaddr
         columns:
           - name: _airbyte_customers_hashid
           - name: URI
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_webaddr_hashid
 
       - name: departments
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -917,7 +1225,9 @@ sources:
           - name: synctoken
           - name: subdepartment
           - name: fullyqualifiedname
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departments_hashid
 
       - name: departments_metadata
@@ -925,7 +1235,9 @@ sources:
           - name: _airbyte_departments_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: departments_parentref
@@ -933,11 +1245,15 @@ sources:
           - name: _airbyte_departments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_parentref_hashid
 
       - name: departments_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -950,11 +1266,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departments_hashid
 
       - name: deposits
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -968,7 +1287,9 @@ sources:
           - name: exchangerate
           - name: departmentref
           - name: deposittoaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposits_hashid
 
       - name: deposits_cashback
@@ -977,7 +1298,9 @@ sources:
           - name: memo
           - name: amount
           - name: accountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_cashback_hashid
 
       - name: deposits_cashback_accountref
@@ -985,7 +1308,9 @@ sources:
           - name: _airbyte_cashback_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
       - name: deposits_currencyref
@@ -993,7 +1318,9 @@ sources:
           - name: _airbyte_deposits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: deposits_departmentref
@@ -1001,7 +1328,9 @@ sources:
           - name: _airbyte_deposits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: deposits_deposittoaccountref
@@ -1009,7 +1338,9 @@ sources:
           - name: _airbyte_deposits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposittoaccountref_hashid
 
       - name: deposits_line
@@ -1020,24 +1351,37 @@ sources:
           - name: linenum
           - name: linkedtxn
           - name: detailtype
+          - name: description
           - name: depositlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: deposits_line_deposi__tail_paymentmethodref
         columns:
           - name: _airbyte_depositlinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_paymentmethodref_hashid
 
       - name: deposits_line_depositlinedetail
         columns:
           - name: _airbyte_line_hashid
+          - name: entity
+          - name: txntype
           - name: checknum
+          - name: classref
           - name: accountref
+          - name: taxcoderef
+          - name: taxapplicableon
           - name: paymentmethodref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_depositlinedetail_hashid
 
       - name: deposits_line_depositlinedetail_accountref
@@ -1045,8 +1389,40 @@ sources:
           - name: _airbyte_depositlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
+
+      - name: deposits_line_depositlinedetail_classref
+        columns:
+          - name: _airbyte_depositlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: deposits_line_depositlinedetail_entity
+        columns:
+          - name: _airbyte_depositlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_entity_hashid
+
+      - name: deposits_line_depositlinedetail_taxcoderef
+        columns:
+          - name: _airbyte_depositlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
 
       - name: deposits_line_linkedtxn
         columns:
@@ -1054,7 +1430,9 @@ sources:
           - name: txnid
           - name: txntype
           - name: txnlineid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: deposits_metadata
@@ -1062,11 +1440,15 @@ sources:
           - name: _airbyte_deposits_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: deposits_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -1083,11 +1465,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposits_hashid
 
       - name: employees
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: active
           - name: domain
@@ -1101,7 +1486,9 @@ sources:
           - name: billabletime
           - name: primaryphone
           - name: printoncheckname
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_employees_hashid
 
       - name: employees_metadata
@@ -1109,18 +1496,24 @@ sources:
           - name: _airbyte_employees_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: employees_primaryphone
         columns:
           - name: _airbyte_employees_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_primaryphone_hashid
 
       - name: employees_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: active
           - name: domain
@@ -1137,11 +1530,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_employees_hashid
 
       - name: estimates
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -1167,7 +1563,9 @@ sources:
           - name: txntaxdetail
           - name: patternproperties
           - name: applytaxafterdiscount
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_estimates_hashid
 
       - name: estimates_billaddr
@@ -1180,14 +1578,18 @@ sources:
           - name: line2
           - name: line3
           - name: line4
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: estimates_billemail
         columns:
           - name: _airbyte_estimates_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billemail_hashid
 
       - name: estimates_currencyref
@@ -1195,14 +1597,18 @@ sources:
           - name: _airbyte_estimates_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: estimates_customermemo
         columns:
           - name: _airbyte_estimates_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customermemo_hashid
 
       - name: estimates_customerref
@@ -1210,7 +1616,9 @@ sources:
           - name: _airbyte_estimates_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: estimates_customfield
@@ -1218,15 +1626,20 @@ sources:
           - name: _airbyte_estimates_hashid
           - name: Name
           - name: Type
+          - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
 
       - name: estimates_deliveryinfo
         columns:
           - name: _airbyte_estimates_hashid
           - name: deliverytype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deliveryinfo_hashid
 
       - name: estimates_line
@@ -1238,14 +1651,18 @@ sources:
           - name: detailtype
           - name: description
           - name: salesitemlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: estimates_line_sales__linedetail_taxcoderef
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: estimates_line_salesitemlinedetail
@@ -1255,7 +1672,9 @@ sources:
           - name: itemref
           - name: unitprice
           - name: taxcoderef
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salesitemlinedetail_hashid
 
       - name: estimates_line_salesitemlinedetail_itemref
@@ -1263,7 +1682,9 @@ sources:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: estimates_linkedtxn
@@ -1271,7 +1692,9 @@ sources:
           - name: _airbyte_estimates_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: estimates_metadata
@@ -1279,11 +1702,15 @@ sources:
           - name: _airbyte_estimates_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: estimates_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -1312,7 +1739,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_estimates_hashid
 
       - name: estimates_shipaddr
@@ -1325,14 +1754,18 @@ sources:
           - name: line1
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: estimates_txntaxdeta__linedetail_taxrateref
         columns:
           - name: _airbyte_taxlinedetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxrateref_hashid
 
       - name: estimates_txntaxdeta__taxline_taxlinedetail
@@ -1342,7 +1775,9 @@ sources:
           - name: taxrateref
           - name: percentbased
           - name: netamounttaxable
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxlinedetail_hashid
 
       - name: estimates_txntaxdetail
@@ -1351,7 +1786,9 @@ sources:
           - name: taxline
           - name: totaltax
           - name: txntaxcoderef
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxdetail_hashid
 
       - name: estimates_txntaxdetail_taxline
@@ -1360,18 +1797,23 @@ sources:
           - name: amount
           - name: detailtype
           - name: taxlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxline_hashid
 
       - name: estimates_txntaxdetail_txntaxcoderef
         columns:
           - name: _airbyte_txntaxdetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxcoderef_hashid
 
       - name: invoices
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -1398,13 +1840,17 @@ sources:
           - name: hometotalamt
           - name: salestermref
           - name: txntaxdetail
+          - name: departmentref
           - name: allowipnpayment
           - name: patternproperties
           - name: allowonlinepayment
+          - name: deposittoaccountref
           - name: allowonlineachpayment
           - name: applytaxafterdiscount
           - name: allowonlinecreditcardpayment
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_invoices_hashid
 
       - name: invoices_billaddr
@@ -1420,22 +1866,18 @@ sources:
           - name: line4
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
-
-      - name: invoices_departmentref
-        columns:
-          - name: _airbyte_invoices_hashid
-          - name: name
-          - name: value
-          - name: _airbyte_emitted_at
-          - name: _airbyte_departmentref_hashid
 
       - name: invoices_billemail
         columns:
           - name: _airbyte_invoices_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billemail_hashid
 
       - name: invoices_currencyref
@@ -1443,14 +1885,18 @@ sources:
           - name: _airbyte_invoices_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: invoices_customermemo
         columns:
           - name: _airbyte_invoices_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customermemo_hashid
 
       - name: invoices_customerref
@@ -1458,7 +1904,9 @@ sources:
           - name: _airbyte_invoices_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: invoices_customfield
@@ -1468,15 +1916,39 @@ sources:
           - name: Type
           - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
 
       - name: invoices_deliveryinfo
         columns:
           - name: _airbyte_invoices_hashid
           - name: deliverytype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deliveryinfo_hashid
+
+      - name: invoices_departmentref
+        columns:
+          - name: _airbyte_invoices_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
+
+      - name: invoices_deposittoaccountref
+        columns:
+          - name: _airbyte_invoices_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_deposittoaccountref_hashid
 
       - name: invoices_line
         columns:
@@ -1489,7 +1961,9 @@ sources:
           - name: description
           - name: discountlinedetail
           - name: salesitemlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: invoices_line_discou__il_discountaccountref
@@ -1497,31 +1971,71 @@ sources:
           - name: _airbyte_discountlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_discountaccountref_hashid
 
       - name: invoices_line_discountlinedetail
         columns:
           - name: _airbyte_line_hashid
+          - name: classref
+          - name: taxcoderef
           - name: percentbased
           - name: discountpercent
           - name: discountaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_discountlinedetail_hashid
+
+      - name: invoices_line_discountlinedetail_classref
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: invoices_line_discountlinedetail_taxcoderef
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
 
       - name: invoices_line_linkedtxn
         columns:
           - name: _airbyte_line_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
+
+      - name: invoices_line_salesi__detail_itemaccountref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itemaccountref_hashid
 
       - name: invoices_line_salesi__linedetail_taxcoderef
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: invoices_line_salesitemlinedetail
@@ -1533,7 +2047,10 @@ sources:
           - name: unitprice
           - name: taxcoderef
           - name: servicedate
+          - name: itemaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salesitemlinedetail_hashid
 
       - name: invoices_line_salesitemlinedetail_classref
@@ -1541,7 +2058,9 @@ sources:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: invoices_line_salesitemlinedetail_itemref
@@ -1549,7 +2068,9 @@ sources:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: invoices_linkedtxn
@@ -1557,7 +2078,9 @@ sources:
           - name: _airbyte_invoices_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: invoices_metadata
@@ -1565,18 +2088,24 @@ sources:
           - name: _airbyte_invoices_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: invoices_salestermref
         columns:
           - name: _airbyte_invoices_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestermref_hashid
 
       - name: invoices_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -1603,16 +2132,20 @@ sources:
           - name: hometotalamt
           - name: salestermref
           - name: txntaxdetail
+          - name: departmentref
           - name: allowipnpayment
           - name: patternproperties
           - name: allowonlinepayment
+          - name: deposittoaccountref
           - name: allowonlineachpayment
           - name: applytaxafterdiscount
           - name: allowonlinecreditcardpayment
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_invoices_hashid
 
       - name: invoices_shipaddr
@@ -1625,14 +2158,18 @@ sources:
           - name: line1
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: invoices_txntaxdetai__linedetail_taxrateref
         columns:
           - name: _airbyte_taxlinedetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxrateref_hashid
 
       - name: invoices_txntaxdetail
@@ -1641,7 +2178,9 @@ sources:
           - name: taxline
           - name: totaltax
           - name: txntaxcoderef
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxdetail_hashid
 
       - name: invoices_txntaxdetail_taxline
@@ -1650,7 +2189,9 @@ sources:
           - name: amount
           - name: detailtype
           - name: taxlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxline_hashid
 
       - name: invoices_txntaxdetail_taxline_taxlinedetail
@@ -1660,18 +2201,23 @@ sources:
           - name: taxrateref
           - name: percentbased
           - name: netamounttaxable
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxlinedetail_hashid
 
       - name: invoices_txntaxdetail_txntaxcoderef
         columns:
           - name: _airbyte_txntaxdetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxcoderef_hashid
 
       - name: items
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: Type
@@ -1692,19 +2238,19 @@ sources:
           - name: expenseaccountref
           - name: patternproperties
           - name: fullyqualifiedname
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_items_hashid
-          # Additional fields via refs
-          - name: asset_account_id
-          - name: expense_account_id
-          - name: income_account_id
 
       - name: items_assetaccountref
         columns:
           - name: _airbyte_items_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_assetaccountref_hashid
 
       - name: items_expenseaccountref
@@ -1712,7 +2258,9 @@ sources:
           - name: _airbyte_items_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_expenseaccountref_hashid
 
       - name: items_incomeaccountref
@@ -1720,7 +2268,9 @@ sources:
           - name: _airbyte_items_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_incomeaccountref_hashid
 
       - name: items_metadata
@@ -1728,11 +2278,15 @@ sources:
           - name: _airbyte_items_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: items_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: Type
@@ -1756,11 +2310,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_items_hashid
 
       - name: journal_entries
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -1773,17 +2330,19 @@ sources:
           - name: currencyref
           - name: privatenote
           - name: exchangerate
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_journal_entries_hashid
-          # Additional ref field
-          - name: currency_id
 
       - name: journal_entries_currencyref
         columns:
           - name: _airbyte_journal_entries_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: journal_entries_line
@@ -1794,23 +2353,96 @@ sources:
           - name: detailtype
           - name: description
           - name: journalentrylinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
+
+      - name: journal_entries_line__detail_journalcoderef
+        columns:
+          - name: _airbyte_journalentrylinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_journalcoderef_hashid
+
+      - name: journal_entries_line__edetail_departmentref
+        columns:
+          - name: _airbyte_journalentrylinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: journal_entries_line__linedetail_accountref
         columns:
           - name: _airbyte_journalentrylinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
+
+      - name: journal_entries_line__linedetail_taxcoderef
+        columns:
+          - name: _airbyte_journalentrylinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
+
+      - name: journal_entries_line__ntrylinedetail_entity
+        columns:
+          - name: _airbyte_journalentrylinedetail_hashid
+          - name: Type
+          - name: entityref
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_entity_hashid
+
+      - name: journal_entries_line__rylinedetail_classref
+        columns:
+          - name: _airbyte_journalentrylinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: journal_entries_line__tail_entity_entityref
+        columns:
+          - name: _airbyte_entity_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_entityref_hashid
 
       - name: journal_entries_line_journalentrylinedetail
         columns:
           - name: _airbyte_line_hashid
+          - name: entity
+          - name: classref
+          - name: taxamount
           - name: accountref
+          - name: taxcoderef
           - name: postingtype
+          - name: departmentref
+          - name: billablestatus
+          - name: journalcoderef
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_journalentrylinedetail_hashid
 
       - name: journal_entries_metadata
@@ -1818,11 +2450,15 @@ sources:
           - name: _airbyte_journal_entries_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: journal_entries_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -1838,7 +2474,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_journal_entries_hashid
 
       - name: journal_entries_taxrateref
@@ -1846,11 +2484,14 @@ sources:
           - name: _airbyte_journal_entries_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxrateref_hashid
 
       - name: payment_methods
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: Type
@@ -1858,7 +2499,9 @@ sources:
           - name: domain
           - name: metadata
           - name: synctoken
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_payment_methods_hashid
 
       - name: payment_methods_metadata
@@ -1866,11 +2509,15 @@ sources:
           - name: _airbyte_payment_methods_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: payment_methods_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: Type
@@ -1881,11 +2528,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_payment_methods_hashid
 
       - name: payments
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
@@ -1904,7 +2554,9 @@ sources:
           - name: processpayment
           - name: paymentmethodref
           - name: deposittoaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_payments_hashid
 
       - name: payments_araccountref
@@ -1912,7 +2564,9 @@ sources:
           - name: _airbyte_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_araccountref_hashid
 
       - name: payments_currencyref
@@ -1920,7 +2574,9 @@ sources:
           - name: _airbyte_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: payments_customerref
@@ -1928,14 +2584,18 @@ sources:
           - name: _airbyte_payments_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: payments_deposittoaccountref
         columns:
           - name: _airbyte_payments_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposittoaccountref_hashid
 
       - name: payments_line
@@ -1944,14 +2604,18 @@ sources:
           - name: amount
           - name: lineex
           - name: linkedtxn
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: payments_line_lineex
         columns:
           - name: _airbyte_line_hashid
           - name: any
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_lineex_hashid
 
       - name: payments_line_lineex_any
@@ -1964,7 +2628,9 @@ sources:
           - name: globalscope
           - name: declaredtype
           - name: typesubstituted
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_any_hashid
 
       - name: payments_line_lineex_any_value
@@ -1972,7 +2638,9 @@ sources:
           - name: _airbyte_any_hashid
           - name: Name
           - name: Value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_value_hashid
 
       - name: payments_line_linkedtxn
@@ -1980,7 +2648,9 @@ sources:
           - name: _airbyte_line_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: payments_linkedtxn
@@ -1988,7 +2658,9 @@ sources:
           - name: _airbyte_payments_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: payments_metadata
@@ -1996,18 +2668,24 @@ sources:
           - name: _airbyte_payments_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: payments_paymentmethodref
         columns:
           - name: _airbyte_payments_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_paymentmethodref_hashid
 
       - name: payments_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
@@ -2029,11 +2707,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_payments_hashid
 
       - name: purchase_orders
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: memo
@@ -2060,7 +2741,9 @@ sources:
           - name: salestermref
           - name: txntaxdetail
           - name: departmentref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_purchase_orders_hashid
 
       - name: purchase_orders_apaccountref
@@ -2068,7 +2751,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_apaccountref_hashid
 
       - name: purchase_orders_classref
@@ -2076,7 +2761,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: purchase_orders_currencyref
@@ -2084,7 +2771,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: purchase_orders_customfield
@@ -2092,8 +2781,11 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: Name
           - name: Type
+          - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
 
       - name: purchase_orders_departmentref
@@ -2101,7 +2793,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: purchase_orders_line
@@ -2113,7 +2807,9 @@ sources:
           - name: detailtype
           - name: description
           - name: itembasedexpenselinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: purchase_orders_line__asedexpenselinedetail
@@ -2126,7 +2822,9 @@ sources:
           - name: taxcoderef
           - name: customerref
           - name: billablestatus
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itembasedexpenselinedetail_hashid
 
       - name: purchase_orders_line__inedetail_customerref
@@ -2134,14 +2832,18 @@ sources:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: purchase_orders_line__linedetail_taxcoderef
         columns:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: purchase_orders_line__nselinedetail_itemref
@@ -2149,7 +2851,9 @@ sources:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: purchase_orders_line__selinedetail_classref
@@ -2157,7 +2861,9 @@ sources:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: purchase_orders_linkedtxn
@@ -2165,7 +2871,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: purchase_orders_metadata
@@ -2173,7 +2881,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: purchase_orders_salestermref
@@ -2181,11 +2891,15 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestermref_hashid
 
       - name: purchase_orders_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: memo
@@ -2215,7 +2929,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_purchase_orders_hashid
 
       - name: purchase_orders_shipaddr
@@ -2227,7 +2943,9 @@ sources:
           - name: line1
           - name: line2
           - name: line3
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: purchase_orders_shipto
@@ -2235,7 +2953,9 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipto_hashid
 
       - name: purchase_orders_vendoraddr
@@ -2250,7 +2970,9 @@ sources:
           - name: line3
           - name: line4
           - name: country
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendoraddr_hashid
 
       - name: purchase_orders_vendorref
@@ -2258,11 +2980,14 @@ sources:
           - name: _airbyte_purchase_orders_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendorref_hashid
 
       - name: purchases
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: credit
@@ -2281,8 +3006,11 @@ sources:
           - name: privatenote
           - name: remittoaddr
           - name: exchangerate
+          - name: departmentref
           - name: patternproperties
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_purchases_hashid
 
       - name: purchases_accountref
@@ -2290,7 +3018,9 @@ sources:
           - name: _airbyte_purchases_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
       - name: purchases_currencyref
@@ -2298,8 +3028,20 @@ sources:
           - name: _airbyte_purchases_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
+
+      - name: purchases_departmentref
+        columns:
+          - name: _airbyte_purchases_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: purchases_entityref
         columns:
@@ -2307,7 +3049,9 @@ sources:
           - name: name
           - name: type
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_entityref_hashid
 
       - name: purchases_line
@@ -2319,17 +3063,22 @@ sources:
           - name: description
           - name: itembasedexpenselinedetail
           - name: accountbasedexpenselinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
       - name: purchases_line_accou__asedexpenselinedetail
         columns:
           - name: _airbyte_line_hashid
+          - name: classref
           - name: accountref
           - name: taxcoderef
           - name: customerref
           - name: billablestatus
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountbase__enselinedetail_hashid
 
       - name: purchases_line_accou__inedetail_customerref
@@ -2337,7 +3086,9 @@ sources:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: purchases_line_accou__linedetail_accountref
@@ -2345,21 +3096,49 @@ sources:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
       - name: purchases_line_accou__linedetail_taxcoderef
         columns:
           - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
+
+      - name: purchases_line_accou__selinedetail_classref
+        columns:
+          - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: purchases_line_itemb__inedetail_customerref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_customerref_hashid
 
       - name: purchases_line_itemb__linedetail_taxcoderef
         columns:
           - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: purchases_line_itemb__nselinedetail_itemref
@@ -2367,18 +3146,34 @@ sources:
           - name: _airbyte_itembasedexpenselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
+
+      - name: purchases_line_itemb__selinedetail_classref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: purchases_line_itembasedexpenselinedetail
         columns:
           - name: _airbyte_line_hashid
           - name: qty
           - name: itemref
+          - name: classref
           - name: unitprice
           - name: taxcoderef
+          - name: customerref
           - name: billablestatus
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itembasedexpenselinedetail_hashid
 
       - name: purchases_metadata
@@ -2386,14 +3181,18 @@ sources:
           - name: _airbyte_purchases_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: purchases_purchaseex
         columns:
           - name: _airbyte_purchases_hashid
           - name: any
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_purchaseex_hashid
 
       - name: purchases_purchaseex_any
@@ -2406,7 +3205,9 @@ sources:
           - name: globalscope
           - name: declaredtype
           - name: typesubstituted
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_any_hashid
 
       - name: purchases_purchaseex_any_value
@@ -2414,7 +3215,9 @@ sources:
           - name: _airbyte_any_hashid
           - name: Name
           - name: Value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_value_hashid
 
       - name: purchases_remittoaddr
@@ -2427,11 +3230,15 @@ sources:
           - name: line1
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_remittoaddr_hashid
 
       - name: purchases_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: credit
@@ -2450,21 +3257,26 @@ sources:
           - name: privatenote
           - name: remittoaddr
           - name: exchangerate
+          - name: departmentref
           - name: patternproperties
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_purchases_hashid
 
       - name: refund_receipts
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
           - name: balance
           - name: txndate
           - name: billaddr
+          - name: classref
           - name: metadata
           - name: totalamt
           - name: billemail
@@ -2478,11 +3290,14 @@ sources:
           - name: exchangerate
           - name: hometotalamt
           - name: txntaxdetail
+          - name: departmentref
           - name: paymentmethodref
           - name: patternproperties
           - name: deposittoaccountref
           - name: applytaxafterdiscount
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_refund_receipts_hashid
 
       - name: refund_receipts_billaddr
@@ -2495,29 +3310,47 @@ sources:
           - name: line2
           - name: line3
           - name: line4
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: refund_receipts_billemail
         columns:
           - name: _airbyte_refund_receipts_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billemail_hashid
+
+      - name: refund_receipts_classref
+        columns:
+          - name: _airbyte_refund_receipts_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: refund_receipts_currencyref
         columns:
           - name: _airbyte_refund_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: refund_receipts_customermemo
         columns:
           - name: _airbyte_refund_receipts_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customermemo_hashid
 
       - name: refund_receipts_customerref
@@ -2525,7 +3358,9 @@ sources:
           - name: _airbyte_refund_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: refund_receipts_customfield
@@ -2533,16 +3368,31 @@ sources:
           - name: _airbyte_refund_receipts_hashid
           - name: Name
           - name: Type
+          - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
+
+      - name: refund_receipts_departmentref
+        columns:
+          - name: _airbyte_refund_receipts_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: refund_receipts_deposittoaccountref
         columns:
           - name: _airbyte_refund_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposittoaccountref_hashid
 
       - name: refund_receipts_line
@@ -2553,33 +3403,106 @@ sources:
           - name: linenum
           - name: detailtype
           - name: description
+          - name: discountlinedetail
           - name: salesitemlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
 
-      - name: refund_receipts_line__linedetail_taxcoderef
+      - name: refund_receipts_line__detail_itemaccountref
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
-          - name: _airbyte_taxcoderef_hashid
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itemaccountref_hashid
+
+      - name: refund_receipts_line__emlinedetail_classref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: refund_receipts_line__il_discountaccountref
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_discountaccountref_hashid
+
+      - name: refund_receipts_line__ntlinedetail_classref
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: refund_receipts_line__temlinedetail_itemref
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
+
+      - name: refund_receipts_line_discoun_01b_taxcoderef
+        columns:
+          - name: _airbyte_discountlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
+
+      - name: refund_receipts_line_discountlinedetail
+        columns:
+          - name: _airbyte_line_hashid
+          - name: classref
+          - name: taxcoderef
+          - name: discountaccountref
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_discountlinedetail_hashid
+
+      - name: refund_receipts_line_salesit_33f_taxcoderef
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
 
       - name: refund_receipts_line_salesitemlinedetail
         columns:
           - name: _airbyte_line_hashid
           - name: qty
           - name: itemref
+          - name: classref
           - name: unitprice
           - name: taxcoderef
+          - name: itemaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salesitemlinedetail_hashid
 
       - name: refund_receipts_metadata
@@ -2587,7 +3510,9 @@ sources:
           - name: _airbyte_refund_receipts_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: refund_receipts_paymentmethodref
@@ -2595,17 +3520,22 @@ sources:
           - name: _airbyte_refund_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_paymentmethodref_hashid
 
       - name: refund_receipts_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
           - name: balance
           - name: txndate
           - name: billaddr
+          - name: classref
           - name: metadata
           - name: totalamt
           - name: billemail
@@ -2619,6 +3549,7 @@ sources:
           - name: exchangerate
           - name: hometotalamt
           - name: txntaxdetail
+          - name: departmentref
           - name: paymentmethodref
           - name: patternproperties
           - name: deposittoaccountref
@@ -2626,24 +3557,30 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_refund_receipts_hashid
 
       - name: refund_receipts_txntaxdetail
         columns:
           - name: _airbyte_refund_receipts_hashid
           - name: totaltax
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxdetail_hashid
 
       - name: sales_receipts
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
           - name: balance
           - name: txndate
           - name: billaddr
+          - name: classref
           - name: metadata
           - name: shipaddr
           - name: totalamt
@@ -2660,12 +3597,15 @@ sources:
           - name: exchangerate
           - name: hometotalamt
           - name: txntaxdetail
+          - name: departmentref
           - name: paymentrefnum
           - name: paymentmethodref
           - name: patternproperties
           - name: deposittoaccountref
           - name: applytaxafterdiscount
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_sales_receipts_hashid
 
       - name: sales_receipts_billaddr
@@ -2678,29 +3618,47 @@ sources:
           - name: line2
           - name: line3
           - name: line4
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: sales_receipts_billemail
         columns:
           - name: _airbyte_sales_receipts_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billemail_hashid
+
+      - name: sales_receipts_classref
+        columns:
+          - name: _airbyte_sales_receipts_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: sales_receipts_currencyref
         columns:
           - name: _airbyte_sales_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: sales_receipts_customermemo
         columns:
           - name: _airbyte_sales_receipts_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customermemo_hashid
 
       - name: sales_receipts_customerref
@@ -2708,7 +3666,9 @@ sources:
           - name: _airbyte_sales_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
 
       - name: sales_receipts_customfield
@@ -2716,16 +3676,31 @@ sources:
           - name: _airbyte_sales_receipts_hashid
           - name: Name
           - name: Type
+          - name: stringvalue
           - name: definitionid
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customfield_hashid
+
+      - name: sales_receipts_departmentref
+        columns:
+          - name: _airbyte_sales_receipts_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: sales_receipts_deposittoaccountref
         columns:
           - name: _airbyte_sales_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_deposittoaccountref_hashid
 
       - name: sales_receipts_line
@@ -2738,22 +3713,49 @@ sources:
           - name: description
           - name: discountlinedetail
           - name: salesitemlinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
+
+      - name: sales_receipts_line___detail_itemaccountref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itemaccountref_hashid
+
+      - name: sales_receipts_line___emlinedetail_classref
+        columns:
+          - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: sales_receipts_line___il_discountaccountref
         columns:
           - name: _airbyte_discountlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_discountaccountref_hashid
 
       - name: sales_receipts_line___linedetail_taxcoderef
         columns:
           - name: _airbyte_salesitemlinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxcoderef_hashid
 
       - name: sales_receipts_line___temlinedetail_itemref
@@ -2761,7 +3763,9 @@ sources:
           - name: _airbyte_salesitemlinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: sales_receipts_line_discountlinedetail
@@ -2770,7 +3774,9 @@ sources:
           - name: percentbased
           - name: discountpercent
           - name: discountaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_discountlinedetail_hashid
 
       - name: sales_receipts_line_salesitemlinedetail
@@ -2778,9 +3784,13 @@ sources:
           - name: _airbyte_line_hashid
           - name: qty
           - name: itemref
+          - name: classref
           - name: unitprice
           - name: taxcoderef
+          - name: itemaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salesitemlinedetail_hashid
 
       - name: sales_receipts_linkedtxn
@@ -2788,7 +3798,9 @@ sources:
           - name: _airbyte_sales_receipts_hashid
           - name: txnid
           - name: txntype
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_linkedtxn_hashid
 
       - name: sales_receipts_metadata
@@ -2796,7 +3808,9 @@ sources:
           - name: _airbyte_sales_receipts_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: sales_receipts_paymentmethodref
@@ -2804,17 +3818,22 @@ sources:
           - name: _airbyte_sales_receipts_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_paymentmethodref_hashid
 
       - name: sales_receipts_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
           - name: balance
           - name: txndate
           - name: billaddr
+          - name: classref
           - name: metadata
           - name: shipaddr
           - name: totalamt
@@ -2831,6 +3850,7 @@ sources:
           - name: exchangerate
           - name: hometotalamt
           - name: txntaxdetail
+          - name: departmentref
           - name: paymentrefnum
           - name: paymentmethodref
           - name: patternproperties
@@ -2839,7 +3859,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_sales_receipts_hashid
 
       - name: sales_receipts_shipaddr
@@ -2853,18 +3875,23 @@ sources:
           - name: country
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_shipaddr_hashid
 
       - name: sales_receipts_txntaxdetail
         columns:
           - name: _airbyte_sales_receipts_hashid
           - name: totaltax
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_txntaxdetail_hashid
 
       - name: tax_agencies
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: domain
           - name: metadata
@@ -2873,7 +3900,9 @@ sources:
           - name: taxtrackedonsales
           - name: taxregistrationnumber
           - name: taxtrackedonpurchases
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_agencies_hashid
 
       - name: tax_agencies_metadata
@@ -2881,11 +3910,15 @@ sources:
           - name: _airbyte_tax_agencies_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: tax_agencies_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: domain
           - name: metadata
@@ -2897,11 +3930,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_agencies_hashid
 
       - name: tax_codes
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -2914,7 +3950,9 @@ sources:
           - name: description
           - name: salestaxratelist
           - name: purchasetaxratelist
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_codes_hashid
 
       - name: tax_codes_metadata
@@ -2922,7 +3960,9 @@ sources:
           - name: _airbyte_tax_codes_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: tax_codes_salestaxra__ratedetail_taxrateref
@@ -2930,14 +3970,18 @@ sources:
           - name: _airbyte_taxratedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxrateref_hashid
 
       - name: tax_codes_salestaxratelist
         columns:
           - name: _airbyte_tax_codes_hashid
           - name: taxratedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_salestaxratelist_hashid
 
       - name: tax_codes_salestaxratelist_taxratedetail
@@ -2946,11 +3990,15 @@ sources:
           - name: taxorder
           - name: taxrateref
           - name: taxtypeapplicable
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_taxratedetail_hashid
 
       - name: tax_codes_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -2966,11 +4014,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_codes_hashid
 
       - name: tax_rates
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: active
@@ -2983,14 +4034,18 @@ sources:
           - name: displaytype
           - name: specialtaxtype
           - name: effectivetaxrate
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_rates_hashid
 
       - name: tax_rates_agencyref
         columns:
           - name: _airbyte_tax_rates_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_agencyref_hashid
 
       - name: tax_rates_metadata
@@ -2998,11 +4053,15 @@ sources:
           - name: _airbyte_tax_rates_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: tax_rates_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: active
@@ -3018,11 +4077,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_tax_rates_hashid
 
       - name: terms
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: Name
           - name: Type
@@ -3036,7 +4098,9 @@ sources:
           - name: discountpercent
           - name: duenextmonthdays
           - name: discountdayofmonth
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_terms_hashid
 
       - name: terms_metadata
@@ -3044,11 +4108,15 @@ sources:
           - name: _airbyte_terms_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: terms_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: Name
           - name: Type
@@ -3065,11 +4133,14 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_terms_hashid
 
       - name: time_activities
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: hours
           - name: nameof
@@ -3078,31 +4149,60 @@ sources:
           - name: minutes
           - name: taxable
           - name: txndate
+          - name: classref
           - name: metadata
           - name: synctoken
           - name: hourlyrate
           - name: customerref
           - name: description
           - name: employeeref
+          - name: departmentref
           - name: billablestatus
+          - name: payrollitemref
           - name: patternproperties
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_time_activities_hashid
+
+      - name: time_activities_classref
+        columns:
+          - name: _airbyte_time_activities_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
 
       - name: time_activities_customerref
         columns:
           - name: _airbyte_time_activities_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_customerref_hashid
+
+      - name: time_activities_departmentref
+        columns:
+          - name: _airbyte_time_activities_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_departmentref_hashid
 
       - name: time_activities_employeeref
         columns:
           - name: _airbyte_time_activities_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_employeeref_hashid
 
       - name: time_activities_itemref
@@ -3110,7 +4210,9 @@ sources:
           - name: _airbyte_time_activities_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_itemref_hashid
 
       - name: time_activities_metadata
@@ -3118,11 +4220,25 @@ sources:
           - name: _airbyte_time_activities_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
+
+      - name: time_activities_payrollitemref
+        columns:
+          - name: _airbyte_time_activities_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_payrollitemref_hashid
 
       - name: time_activities_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: hours
           - name: nameof
@@ -3131,22 +4247,28 @@ sources:
           - name: minutes
           - name: taxable
           - name: txndate
+          - name: classref
           - name: metadata
           - name: synctoken
           - name: hourlyrate
           - name: customerref
           - name: description
           - name: employeeref
+          - name: departmentref
           - name: billablestatus
+          - name: payrollitemref
           - name: patternproperties
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_time_activities_hashid
 
       - name: transfers
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: amount
           - name: domain
@@ -3158,7 +4280,9 @@ sources:
           - name: exchangerate
           - name: toaccountref
           - name: fromaccountref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_transfers_hashid
 
       - name: transfers_currencyref
@@ -3166,7 +4290,9 @@ sources:
           - name: _airbyte_transfers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: transfers_fromaccountref
@@ -3174,7 +4300,9 @@ sources:
           - name: _airbyte_transfers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_fromaccountref_hashid
 
       - name: transfers_metadata
@@ -3182,11 +4310,15 @@ sources:
           - name: _airbyte_transfers_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: transfers_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: amount
           - name: domain
@@ -3201,7 +4333,9 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_transfers_hashid
 
       - name: transfers_toaccountref
@@ -3209,14 +4343,46 @@ sources:
           - name: _airbyte_transfers_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_toaccountref_hashid
+
+      - name: vendor_cre_d0e_accountbased__nselinedetail
+        columns:
+          - name: _airbyte_line_hashid
+          - name: classref
+          - name: accountref
+          - name: taxcoderef
+          - name: customerref
+          - name: billablestatus
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_accountbase__enselinedetail_hashid
+
+      - name: vendor_credi_cef_itembasedexpenselinedetail
+        columns:
+          - name: _airbyte_line_hashid
+          - name: qty
+          - name: itemref
+          - name: classref
+          - name: unitprice
+          - name: taxcoderef
+          - name: customerref
+          - name: billablestatus
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itembasedexpenselinedetail_hashid
 
       - name: vendor_credits
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: line
           - name: domain
+          - name: balance
           - name: txndate
           - name: metadata
           - name: totalamt
@@ -3224,10 +4390,13 @@ sources:
           - name: synctoken
           - name: vendorref
           - name: currencyref
+          - name: privatenote
           - name: apaccountref
           - name: exchangerate
           - name: departmentref
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendor_credits_hashid
 
       - name: vendor_credits_apaccountref
@@ -3235,7 +4404,9 @@ sources:
           - name: _airbyte_vendor_credits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_apaccountref_hashid
 
       - name: vendor_credits_currencyref
@@ -3243,7 +4414,9 @@ sources:
           - name: _airbyte_vendor_credits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: vendor_credits_departmentref
@@ -3251,7 +4424,9 @@ sources:
           - name: _airbyte_vendor_credits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_departmentref_hashid
 
       - name: vendor_credits_line
@@ -3262,50 +4437,91 @@ sources:
           - name: linenum
           - name: detailtype
           - name: description
+          - name: itembasedexpenselinedetail
           - name: accountbasedexpenselinedetail
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_line_hashid
-
-      - name: vendor_credits_line___asedexpenselinedetail
-        columns:
-          - name: _airbyte_line_hashid
-          - name: classref
-          - name: accountref
-          - name: taxcoderef
-          - name: customerref
-          - name: billablestatus
-          - name: _airbyte_emitted_at
-          - name: _airbyte_accountbase__enselinedetail_hashid
-
-      - name: vendor_credits_line___inedetail_customerref
-        columns:
-          - name: _airbyte_accountbase__enselinedetail_hashid
-          - name: name
-          - name: value
-          - name: _airbyte_emitted_at
-          - name: _airbyte_customerref_hashid
 
       - name: vendor_credits_line___linedetail_accountref
         columns:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_accountref_hashid
 
-      - name: vendor_credits_line___linedetail_taxcoderef
+      - name: vendor_credits_line___nselinedetail_itemref
         columns:
-          - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
-          - name: _airbyte_taxcoderef_hashid
+          - name: _airbyte_normalized_at
+          - name: _airbyte_itemref_hashid
 
-      - name: vendor_credits_line___selinedetail_classref
+      - name: vendor_credits_line_account_0c9_customerref
         columns:
           - name: _airbyte_accountbase__enselinedetail_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_customerref_hashid
+
+      - name: vendor_credits_line_accountb_ab8_taxcoderef
+        columns:
+          - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
+
+      - name: vendor_credits_line_accountbas_b60_classref
+        columns:
+          - name: _airbyte_accountbase__enselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_classref_hashid
+
+      - name: vendor_credits_line_itembas_6e0_customerref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_customerref_hashid
+
+      - name: vendor_credits_line_itembase_12c_taxcoderef
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
+          - name: _airbyte_taxcoderef_hashid
+
+      - name: vendor_credits_line_itembasede_630_classref
+        columns:
+          - name: _airbyte_itembasedexpenselinedetail_hashid
+          - name: name
+          - name: value
+          - name: _airbyte_ab_id
+          - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_classref_hashid
 
       - name: vendor_credits_metadata
@@ -3313,14 +4529,19 @@ sources:
           - name: _airbyte_vendor_credits_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: vendor_credits_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: line
           - name: domain
+          - name: balance
           - name: txndate
           - name: metadata
           - name: totalamt
@@ -3328,13 +4549,16 @@ sources:
           - name: synctoken
           - name: vendorref
           - name: currencyref
+          - name: privatenote
           - name: apaccountref
           - name: exchangerate
           - name: departmentref
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendor_credits_hashid
 
       - name: vendor_credits_vendorref
@@ -3342,11 +4566,14 @@ sources:
           - name: _airbyte_vendor_credits_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendorref_hashid
 
       - name: vendors
         columns:
+          - name: _airbyte_unique_key
           - name: Id
           - name: fax
           - name: title
@@ -3373,7 +4600,9 @@ sources:
           - name: primaryemailaddr
           - name: printoncheckname
           - name: patternproperties
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendors_hashid
 
       - name: vendors_billaddr
@@ -3387,7 +4616,9 @@ sources:
           - name: country
           - name: postalcode
           - name: countrysubdivisioncode
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_billaddr_hashid
 
       - name: vendors_currencyref
@@ -3395,14 +4626,18 @@ sources:
           - name: _airbyte_vendors_hashid
           - name: name
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_currencyref_hashid
 
       - name: vendors_fax
         columns:
           - name: _airbyte_vendors_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_fax_hashid
 
       - name: vendors_metadata
@@ -3410,32 +4645,42 @@ sources:
           - name: _airbyte_vendors_hashid
           - name: createtime
           - name: lastupdatedtime
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_metadata_hashid
 
       - name: vendors_mobile
         columns:
           - name: _airbyte_vendors_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_mobile_hashid
 
       - name: vendors_primaryemailaddr
         columns:
           - name: _airbyte_vendors_hashid
           - name: address
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_primaryemailaddr_hashid
 
       - name: vendors_primaryphone
         columns:
           - name: _airbyte_vendors_hashid
           - name: freeformnumber
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_primaryphone_hashid
 
       - name: vendors_scd
         columns:
+          - name: _airbyte_unique_key
+          - name: _airbyte_unique_key_scd
           - name: Id
           - name: fax
           - name: title
@@ -3465,19 +4710,25 @@ sources:
           - name: _airbyte_start_at
           - name: _airbyte_end_at
           - name: _airbyte_active_row
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_vendors_hashid
 
       - name: vendors_termref
         columns:
           - name: _airbyte_vendors_hashid
           - name: value
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_termref_hashid
 
       - name: vendors_webaddr
         columns:
           - name: _airbyte_vendors_hashid
           - name: URI
+          - name: _airbyte_ab_id
           - name: _airbyte_emitted_at
+          - name: _airbyte_normalized_at
           - name: _airbyte_webaddr_hashid

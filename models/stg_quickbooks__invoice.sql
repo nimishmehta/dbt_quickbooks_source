@@ -44,11 +44,9 @@ final as (
         billing_address_id,
         shipping_address_id,
         delivery_type,
-        due_date,
-        _fivetran_deleted
+        due_date
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)
