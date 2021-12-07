@@ -38,11 +38,9 @@ final as (
         department_id,
         total_amount,
         transaction_date,
-        transaction_status,
-        _fivetran_deleted
+        transaction_status
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

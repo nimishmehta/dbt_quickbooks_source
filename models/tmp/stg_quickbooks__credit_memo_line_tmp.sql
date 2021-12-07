@@ -2,4 +2,4 @@
 {{ config(enabled=var('using_credit_memo', True)) }}
 
 select * 
-from {{ var('credit_memo_line') }}
+from {{ var('credit_memos_line') }}

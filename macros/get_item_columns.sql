@@ -6,7 +6,7 @@
     {"name": "created_at","alias": "created_at","quote": "true", "datatype": dbt_utils.type_timestamp()},
     {"name": "description","alias": "description","quote": "true", "datatype": dbt_utils.type_string()},
     {"name": "expense_account_id","alias": "expense_account_id","quote": "true", "datatype": dbt_utils.type_int()},
-    {"name": "fully_qualified_name","alias": "fully_qualified_name","quote": "true", "datatype": dbt_utils.type_string()},
+    {"name": "fullyqualifiedname","alias": "fully_qualified_name","quote": "true", "datatype": dbt_utils.type_string()},
     {"name": "Id","alias": "id","quote": "true", "datatype": dbt_utils.type_int()},
     {"name": "income_account_id","alias": "income_account_id","quote": "true", "datatype": dbt_utils.type_int()},
     {"name": "invstartdate","alias": "inventory_start_date","quote": "true", "datatype": "date"},

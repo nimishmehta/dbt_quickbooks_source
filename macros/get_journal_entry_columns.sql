@@ -1,7 +1,6 @@
 {% macro get_journal_entry_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_deleted", "alias": "_fivetran_deleted","quote": "true", "datatype": "boolean"},
     {"name": "_airbyte_emitted_at", "alias": "_fivetran_synced","quote": "true", "datatype": dbt_utils.type_timestamp()},
     {"name": "adjustment", "alias": "adjustment","quote": "true", "datatype": "boolean"},
     {"name": "created_at", "alias": "created_at","quote": "true", "datatype": dbt_utils.type_timestamp()},

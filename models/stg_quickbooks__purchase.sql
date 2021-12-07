@@ -40,11 +40,9 @@ final as (
         department_id,
         cast(customer_id as {{ dbt_utils.type_int() }}) as customer_id,
         cast(vendor_id as {{ dbt_utils.type_int() }}) as vendor_id,
-        transaction_date,
-        _fivetran_deleted
+        transaction_date
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

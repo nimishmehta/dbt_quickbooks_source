@@ -372,7 +372,7 @@ vars:
     vendors_webaddr: "{{ source('quickbooks','vendors_webaddr') }}"
 
     #Variables if your company utilizes the below parent and child transactional tables.
-    using_address:        True
+    using_address:        False
     using_bill:           True
     using_credit_memo:    True
     using_department:     True
@@ -380,7 +380,7 @@ vars:
     using_deposit:        True
     using_estimate:       True
     using_invoice:        True
-    using_invoice_bundle: True
+    using_invoice_bundle: False
     using_journal_entry:  True
     using_payment:        True
     using_refund_receipt: True

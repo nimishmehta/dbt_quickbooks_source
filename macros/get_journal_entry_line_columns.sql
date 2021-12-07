@@ -11,7 +11,7 @@
     {"name": "description_service_date", "alias": "description_service_date", "quote": true, "datatype": "date"},
     {"name": "description_tax_code_id", "alias": "description_tax_code_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "employee_id", "alias": "employee_id", "quote": true, "datatype": dbt_utils.type_int()},
-    {"name": "index", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "Id", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "journal_entry_id", "alias": "journal_entry_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "posting_type", "alias": "posting_type", "quote": true, "datatype": dbt_utils.type_string()},
     {"name": "tax_amount", "alias": "tax_amount", "quote": true, "datatype": dbt_utils.type_float()},

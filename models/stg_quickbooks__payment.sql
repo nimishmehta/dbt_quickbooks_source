@@ -39,11 +39,9 @@ final as (
         cast(deposit_to_account_id as {{ dbt_utils.type_int() }}) as deposit_to_account_id,
         exchange_rate,
         transaction_date,
-        cast(customer_id as {{ dbt_utils.type_int() }}) as customer_id,
-        _fivetran_deleted
+        cast(customer_id as {{ dbt_utils.type_int() }}) as customer_id
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

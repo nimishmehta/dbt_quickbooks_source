@@ -9,7 +9,7 @@
     {"name": "account_expense_tax_code_id", "alias": "account_expense_tax_code_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "amount", "alias": "amount", "quote": true, "datatype": dbt_utils.type_float()},
     {"name": "description", "alias": "description", "quote": true, "datatype": dbt_utils.type_string()},
-    {"name": "index", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "linenum", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "item_expense_billable_status", "alias": "item_expense_billable_status", "quote": true, "datatype": dbt_utils.type_string()},
     {"name": "item_expense_class_id", "alias": "item_expense_class_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "item_expense_customer_id", "alias": "item_expense_customer_id", "quote": true, "datatype": dbt_utils.type_int()},

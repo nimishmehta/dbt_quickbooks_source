@@ -2,4 +2,4 @@
 {{ config(enabled=var('using_invoice_bundle', True)) }}
 
 select * 
-from {{ var('bundle') }}
+from {{ var('bundles') }}

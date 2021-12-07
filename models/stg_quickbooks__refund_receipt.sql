@@ -42,11 +42,9 @@ final as (
         cast(customer_id as {{ dbt_utils.type_int() }}) as customer_id,
         currency_id,
         exchange_rate,
-        transaction_date,
-        _fivetran_deleted
+        transaction_date
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

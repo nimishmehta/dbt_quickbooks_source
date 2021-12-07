@@ -20,7 +20,7 @@
     {"name": "givenname", "alias": "given_name", "quote": true, "datatype": dbt_utils.type_string()},
     {"name": "Id", "alias": "id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "job", "alias": "job", "quote": true, "datatype": "boolean"},
-    {"name": "level", "alias": "level", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "Level", "alias": "level", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "middlename", "alias": "middle_name", "quote": true, "datatype": dbt_utils.type_string()},
     {"name": "mobile", "alias": "mobile_number", "quote": true, "datatype": dbt_utils.type_string()},
     {"name": "notes", "alias": "notes", "quote": true, "datatype": dbt_utils.type_string()},

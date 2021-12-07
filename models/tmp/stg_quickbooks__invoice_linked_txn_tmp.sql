@@ -2,4 +2,4 @@
 {{ config(enabled=var('using_invoice', True)) }}
 
 select * 
-from {{ var('invoice_linked_txn') }}
+from {{ var('invoices_linkedtxn') }}

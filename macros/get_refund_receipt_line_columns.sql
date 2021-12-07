@@ -12,7 +12,7 @@
     {"name": "discount_discount_percent", "alias": "discount_discount_percent", "quote": true, "datatype": dbt_utils.type_float()},
     {"name": "discount_percent_based", "alias": "discount_percent_based", "quote": true, "datatype": "boolean"},
     {"name": "discount_tax_code_id", "alias": "discount_tax_code_id", "quote": true, "datatype": dbt_utils.type_int()},
-    {"name": "index", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "linenum", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "refund_id", "alias": "refund_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "sales_item_account_id", "alias": "sales_item_account_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "sales_item_class_id", "alias": "sales_item_class_id", "quote": true, "datatype": dbt_utils.type_int()},

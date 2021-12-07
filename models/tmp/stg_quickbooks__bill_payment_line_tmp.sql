@@ -2,4 +2,4 @@
 {{ config(enabled=var('using_bill', True)) }}
 
 select * 
-from {{ var('bill_payment_line') }}
+from {{ var('bill_payments_line') }}

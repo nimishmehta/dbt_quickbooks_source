@@ -42,11 +42,9 @@ final as (
         cast(payable_account_id as {{ dbt_utils.type_int() }}) as payable_account_id,
         total_amount,
         cast(vendor_id as {{ dbt_utils.type_int() }}) as vendor_id,
-        private_note,
-        _fivetran_deleted
+        private_note
     from fields
 )
 
 select * 
 from final
-where not coalesce(_fivetran_deleted, false)

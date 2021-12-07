@@ -1,7 +1,6 @@
 {% macro get_invoice_line_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "alias": "_fivetran_synced", "quote": true, "datatype": dbt_utils.type_timestamp()},
     {"name": "account_id", "alias": "account_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "amount", "alias": "amount", "quote": true, "datatype": dbt_utils.type_float()},
     {"name": "bundle_id", "alias": "bundle_id", "quote": true, "datatype": dbt_utils.type_int()},
@@ -14,7 +13,7 @@
     {"name": "discount_discount_percent", "alias": "discount_discount_percent", "quote": true, "datatype": dbt_utils.type_float()},
     {"name": "discount_percent_based", "alias": "discount_percent_based", "quote": true, "datatype": "boolean"},
     {"name": "discount_tax_code_id", "alias": "discount_tax_code_id", "quote": true, "datatype": dbt_utils.type_int()},
-    {"name": "index", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
+    {"name": "linenum", "alias": "index", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "invoice_id", "alias": "invoice_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "item_id", "alias": "item_id", "quote": true, "datatype": dbt_utils.type_int()},
     {"name": "quantity", "alias": "quantity", "quote": true, "datatype": dbt_utils.type_float()},

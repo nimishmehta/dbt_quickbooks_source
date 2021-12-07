@@ -2,4 +2,4 @@
 {{ config(enabled=var('using_bill', True)) }}
 
 select * 
-from {{ var('bill_linked_txn') }}
+from {{ var('bills_linkedtxn') }}
