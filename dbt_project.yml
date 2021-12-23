@@ -14,8 +14,7 @@ models:
       materialized: view
 
 vars:
-  quickbooks_database: fivetran
-  quickbooks_schema: qb_3rdstrt
+  quickbooks_schema: qb_pt
   quickbooks_source:
     account:                    "{{ source('quickbooks','account') }}"
     address:                    "{{ source('quickbooks','address') }}"
