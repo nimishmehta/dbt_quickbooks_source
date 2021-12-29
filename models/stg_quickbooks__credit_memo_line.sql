@@ -40,6 +40,7 @@ final as (
         sales_item_unit_price,
         cast(discount_account_id as {{ dbt_utils.type_int() }}) as discount_account_id,
         discount_class_id,
+        sales_item_class_id,
         description
     from fields
 )
