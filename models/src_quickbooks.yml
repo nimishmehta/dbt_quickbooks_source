@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: quickbooks
-    schema: "{{ var('quickbooks_schema', 'quickbooks') }}"
-    database: "{{ var('quickbooks_database', target.database) }}"
+    schema: "{{ var('schema_name_raw', 'quickbooks') }}"
+    database: "{{ var('db_name', target.database) }}"
     loader: fivetran
     loaded_at_field: _fivetran_synced
     freshness:
