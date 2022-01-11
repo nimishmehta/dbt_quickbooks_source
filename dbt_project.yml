@@ -2,7 +2,7 @@ config-version: 2
 
 name: 'quickbooks_source'
 version: '0.3.0'
-profile: 'bookrqb'
+profile: 'bookr_dw'
 
 require-dbt-version: ">=0.20.0"
 
@@ -14,7 +14,7 @@ models:
       materialized: view
 
 vars:
-  quickbooks_schema: qb_pt
+  schema_name_raw: qb_pt
   quickbooks_source:
     account:                    "{{ source('quickbooks','account') }}"
     address:                    "{{ source('quickbooks','address') }}"
