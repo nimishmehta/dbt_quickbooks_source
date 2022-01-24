@@ -29,6 +29,7 @@ final as (
     
     select 
         cast(id as {{ dbt_utils.type_int() }}) as customer_id,
+        cast(parent_customer_id as {{ dbt_utils.type_int() }}) as parent_customer_id,
         active as is_active,
         balance,
         balance_with_jobs,
