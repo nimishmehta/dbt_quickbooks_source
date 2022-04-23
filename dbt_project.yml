@@ -69,7 +69,7 @@ vars:
     using_invoice_bundle: False
     using_journal_entry:  True
     using_payment:        True
-    using_refund_receipt: True
+    using_refund_receipt: False
     using_transfer:       True
     using_vendor_credit:  True
     using_sales_receipt:  True
